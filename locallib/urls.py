@@ -26,7 +26,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('catalog', include('catalog.urls')),
+    path('catalog/', include('catalog.urls')),
 ]
 
 # / -> catalog로 리다이렉트 
@@ -34,3 +34,4 @@ urlpatterns += [ path('', RedirectView.as_view(url='catalog/', permanent=True))]
 # serving static files during dev
 urlpatterns += static(settings.STATIC_URL,
                       document_root=settings.STATIC_ROOT)
+
